@@ -4,10 +4,10 @@
         <meta charset="UTF-8">
         <meta name="wieport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Painel Administrador</title>
+        <title>Painel Vendedor</title>
 </head>
 <body>
-<h1>Painel Administrador</h1>
+<h1>Painel Vendedor</h1>
 <p>{{ Auth::user()->name }}</p>
 
 <x-dropdown-link :href="route('profile.edit')">
@@ -24,7 +24,5 @@
         {{ __('Sair') }}
     </x-dropdown-link>
 </form>
-
-
 </body>
 </html>
