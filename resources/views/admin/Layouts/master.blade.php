@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Painel Administrativo &mdash; cataloshop@gmail.com</title>
+  <title>Painel Administrativo &mdash; cataloshoep@gmail.com</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{ asset('backend/assets/modules/bootstrap/css/bootstrap.min.css' ) }}">
@@ -40,15 +40,15 @@
       <!-- START SIDEBAR - CATALOSHOPE.COM.BR  -->
       @include('admin.Layouts.sidbar')
 
-      <!-- START MAIN CONTENT --> - CATALOSHOP.COM.BR
+      <!-- START MAIN CONTENT --> - CATALOSHOPE.COM.BR
       <div class="main-content">
 
       @yield('content')
 
       </div>
-      <!-- END MAIN CONTENT --> - CATALOSHOP.COM.BR
+      <!-- END MAIN CONTENT --> - CATALOSHOPE.COM.BR
 
-      <!-- START FOOTER - CATALOSHOP.COM.BR -->
+      <!-- START FOOTER - CATALOSHOPE.COM.BR -->
       <footer class="main-footer">
         <div class="footer-left">
           Todos os direitos reservados &copy; 2024 <div class="bullet"></div> Desenvolvido <a href="https://cataloshope.com.br/">CataloShope</a> Versão 1.0
@@ -57,7 +57,7 @@
 
         </div>
       </footer>
-      <!-- START FOOTER - CATALOSHOP.COM.BR -->
+      <!-- START FOOTER - CATALOSHOPE.COM.BR -->
     </div>
   </div>
 

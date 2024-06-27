@@ -48,6 +48,25 @@ class ProfileController extends Controller
          $user->email = $request->email;
          $user->save();
 
-         return redirect()->back()->with('success', 'Dados atualizados com sucesso!');
+         toastr()->success('Dados atualizados com sucesso!');
+         //return redirect()->back()->with('success', 'Dados atualizados com sucesso!');
+         return redirect()->back();
+    }
+
+    public function updatePassword(Request $request)
+    {
+        //dd($request->all());
+        $request->validate([
+            'current_password' => ['required', 'current_password'],
+            'password' => ['required', 'confirmed', 'min:8'],
+        ]);
+
+        $request->user()->update([
+            'password' => bcrypt($request->password)
+        ]);
+
+        //return redirect()->back()->with('successSenha', 'Senha alterada com sucesso!');
+        toastr()->success('Senha alterada com sucesso!');
+        return redirect()->back();
     }
 }
