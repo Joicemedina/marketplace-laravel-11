@@ -31,7 +31,7 @@
                     @csrf
                     <div class="form-group">
                       <label for="">Imagem(1300x500px)</label>
-                      <input type="file" name="banner" class="form-control" >
+                      <input type="file" name="banner" class="form-control">
                     </div>
 
                     <div class="form-group">
