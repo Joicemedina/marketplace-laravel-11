@@ -4,10 +4,15 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Slider;
+use App\Traits\UploadImageTrait;
 use Illuminate\Http\Request;
+
 
 class sliderController extends Controller
 {
+
+    //Envio de imagem Cataloshope
+    use UploadImageTrait;
     /**
      * Display a listing of the resource.
      */
@@ -42,6 +47,9 @@ class sliderController extends Controller
 
         $slider = new Slider();
 
+        $imagePath = $this-> uploadImage($request, 'banner', 'uploads');
+
+        $slider->banner = $imagePath;
         $slider->titulo = $request->titulo;
         $slider->title_two = $request->title_two;
         $slider->starting_price = $request->starting_price;
