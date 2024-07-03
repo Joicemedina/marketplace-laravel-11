@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\CategoriaController;
 use App\Http\Controllers\Backend\ProfileController;
-use App\Http\Controllers\Backend\sliderController;
+use App\Http\Controllers\Backend\SliderController;
 use Illuminate\Support\Facades\Route;
 
 //rota admin
@@ -28,4 +29,11 @@ Route::post('admin/profile/update/password', [ProfileController::class, 'updateP
 /** Rota slider destaque   */
 Route::resource('admin/slider', sliderController::class)
 ->middleware(['auth', 'admin']);
+
+/** Rota categoria pai */
+Route::put('muda-status', [CategoriaController::class, 'mudaStatus'])->name('categoria.muda-status');
+Route::resource('admin/categoria', CategoriaController::class)
+->middleware(['auth', 'admin']);
+
+
 
