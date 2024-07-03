@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 class SliderController extends Controller
 {
 
-    //envio de imagem msflix Maykon Silveira
+    //envio de imagem Cataloshope
     use UploadImageTrait;
 
     /**

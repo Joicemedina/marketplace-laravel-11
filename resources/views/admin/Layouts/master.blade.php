@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Painel Administrativo &mdash; cataloshoep@gmail.com</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>Painel Administrativo &mdash; cataloshope@gmail.com</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="{{ asset('backend/assets/modules/bootstrap/css/bootstrap.min.css' ) }}">
@@ -91,6 +92,8 @@
   <script src="//cdn.datatables.net/2.0.6/js/dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/2.0.6/js/dataTables.bootstrap5.js"></script>
 
+  <!-- JS SWEET -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!--JS Toastre -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
