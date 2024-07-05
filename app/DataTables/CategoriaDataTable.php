@@ -71,7 +71,7 @@ class CategoriaDataTable extends DataTable
                     ->orderBy(1)
                     ->selectStyleSingle()
                     ->language([
-                     'url' => asset('backend/assets/traducao-datatable-brasil-ms/pt-BR.json')
+                        'url' => asset('backend/assets/tradução-datatable-brasil/pt-BR.json')
                       ])
                     ->buttons([
                         Button::make('excel'),

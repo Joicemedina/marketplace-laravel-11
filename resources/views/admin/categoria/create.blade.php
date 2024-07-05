@@ -32,7 +32,7 @@
                   <div class="form-group">
                    <div>
                      <button
-                     style="text-align: left; width:5%; padding:15px;"
+                     style="text-align: left; width:5%; padding:10px;"
                      class="btn btn-primary"
                      data-selected-class="btn-danger"
                      data-unselected-class="btn-primary"
