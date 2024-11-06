@@ -1,7 +1,12 @@
 <?php
 
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\AdminPerfilVendedorController;
 use App\Http\Controllers\Backend\CategoriaController;
+use App\Http\Controllers\Backend\CategoriaFilhoController;
+use App\Http\Controllers\Backend\MarcaController;
+use App\Http\Controllers\Backend\ProdutoController;
+use App\Http\Controllers\Backend\ProdutoGaleriasImgController;
 use App\Http\Controllers\Backend\ProfileController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\SubCategoriaController;
@@ -28,16 +33,42 @@ Route::post('admin/profile/update/password', [ProfileController::class, 'updateP
 ->name('admin.profile.password');
 
 /** Rota slider destaque   */
-Route::resource('admin/slider', sliderController::class)
+Route::resource('admin/slider', SliderController::class)
 ->middleware(['auth', 'admin']);
+
 
 /** Rota categoria pai */
 Route::put('muda-status', [CategoriaController::class, 'mudaStatus'])->name('categoria.muda-status');
 Route::resource('admin/categoria', CategoriaController::class)
 ->middleware(['auth', 'admin']);
 
-/** Rota categoria filho   */
+/** Rota categoria sub-categoria  */
 Route::put('subcategoria/muda-status', [SubCategoriaController::class, 'mudaStatus'])->name('sub-categoria.muda-status');
 Route::resource('admin/sub-categoria', SubCategoriaController::class)
 ->middleware(['auth', 'admin']);
 
+/** Rota categoria filho  */
+Route::put('categoria-filho/muda-status', [CategoriaFilhoController::class, 'mudaStatus'])->name('categoria-filho.muda-status');
+Route::get('get-subcategorias', [CategoriaFilhoController::class, 'getSubCategorias'])->name('get-subcategorias');
+Route::resource('admin/categoria-filho', CategoriaFilhoController::class)
+->middleware(['auth', 'admin']);
+
+
+/** Rota marcas */
+Route::put('marcas/muda-status', [MarcaController::class, 'mudaStatus'])->name('marcas.muda-status');
+Route::resource('admin/marcas', MarcaController::class)
+->middleware(['auth', 'admin']);
+
+
+//Perfil do vendedor
+Route::resource('vendedor-perfil', AdminPerfilVendedorController::class)
+->middleware(['auth', 'admin']);
+
+
+//Produtos
+Route::get('produtos/get-subcategorias', [ProdutoController::class, 'getSubCategorias'])->name('produtos.get-subCategorias');
+Route::get('produtos/get-categorias-filho', [ProdutoController::class, 'getCategoriasFilho'])->name('produtos.get-filhoCategorias');
+Route::put('marcas/muda-status', [ProdutoController::class, 'mudaStatus'])->name('produtos.muda-status');
+Route::resource('produtos', ProdutoController::class);
+Route::resource('produtos-galerias-img', ProdutoGaleriasImgController::class)
+->middleware(['auth', 'admin']);
